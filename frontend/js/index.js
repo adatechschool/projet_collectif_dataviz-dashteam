@@ -1,4 +1,3 @@
-console.log("coucou");
 
 const fetchData = async () => {
   try {
