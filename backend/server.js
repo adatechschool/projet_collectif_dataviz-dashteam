@@ -8,15 +8,27 @@ app.use(morgan("dev"));
 
 app.get("/", async (req, res) => {
   try {
+    let d = new Date()
+    console.log("response------------->",d)
+    let month = d.getMonth()+1
+    let date = d.getDate()
+    const response = await fetch("http://numbersapi.com/"+month+"/"+date+"/date") 
+    let text = await response.text()
+    
+    console.log("response--------->",text)
+    res.json({fact: text})
+
     // const response = await fetch("https://api.chucknorris.io/jokes/random");
-    // const data = await response.json();
+    // const data = await response.json();  
     // const response2 = await fetch("https://www.affirmations.dev/");
     // const data2 = await response2.json();
     // res.json({ api1: data, api2: data2 });
   } catch (error) {
     res.status(400).json(error.message);
+    console.log(error)
   }
 });
+
 
 app.listen(3000, () => {
   console.log("Server has started");

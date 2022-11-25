@@ -1,6 +1,7 @@
-console.log("coucou");
+
 
 const fetchData = async () => {
+  
   try {
     const response = await fetch("http://localhost:3000/");
     const data = await response.json();
@@ -11,3 +12,12 @@ const fetchData = async () => {
 };
 
 fetchData();
+
+
+
+var d = new Date()
+var i = 0
+
+setInterval(function(){
+console.log("test"+ i++)
+},1000)
