@@ -1,10 +1,15 @@
 const express = require("express");
 const morgan = require("morgan");
+
+const cors = require("cors");
+
 const request = require("request");
+
 
 const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(cors())
 
 /* Client Credentials oAuth2 flow to authenticate against the Spotify Accounts. */
 
@@ -40,25 +45,25 @@ app.get("/", async (req, res) => {
   try {
 
     let d = new Date()
-    console.log("response------------->",d)
+  
     let month = d.getMonth()+1
     let date = d.getDate()
     const response = await fetch("http://numbersapi.com/"+month+"/"+date+"/date") 
     let text = await response.text()
     
-    console.log("response--------->",text)
-    res.json({fact: text})
+ 
+  
 
-    // const response = await fetch("https://api.chucknorris.io/jokes/random");
-    // const data = await response.json();  
-    // const response2 = await fetch("https://www.affirmations.dev/");
-    // const data2 = await response2.json();
-    // res.json({ api1: data, api2: data2 });
 
+    const responseWeather = await fetch ("https://api.openweathermap.org/data/2.5/weather?lat=48.8566&lon=2.3522&appid=69df7b8d93250c75b0422f77ae3f0484&units=metric&lang=fr");
+    const responseWeather2 = await responseWeather.json()
+    res.json({apiWeather:responseWeather2,fact:text})
   } catch (error) {
     res.status(400).json(error.message);
-    console.log(error)
-  }
+  } 
+
+
+ 
 });
 
 
@@ -66,8 +71,3 @@ app.listen(3000, () => {
   console.log("Server has started");
 });
 
-// const response = await fetch("https://api.chucknorris.io/jokes/random");
-// const data = await response.json();
-// const response2 = await fetch("https://www.affirmations.dev/");
-// const data2 = await response2.json();
-// res.json({ api1: data, api2: data2 });
