@@ -1,8 +1,4 @@
-// import sunshine from "../img/test2.jpg";
 
-// import * as url from "https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg";
-
-document.getElementById("test").src = "img/test2.jpg";
 
 // const fetchData = async () => {
 //   try {
@@ -15,3 +11,12 @@ document.getElementById("test").src = "img/test2.jpg";
 // };
 
 // fetchData();
+
+
+
+var d = new Date()
+var i = 0
+
+setInterval(function(){
+console.log("test"+ i++)
+},1000)
