@@ -1,1 +1,23 @@
 @import "reset.css";
+
+:root {
+  --main-color: #131627;
+  --second-color: #1d1f37;
+}
+
+#main-container {
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+#menu {
+  background-color: var(--second-color);
+  height: 100vh;
+}
+
+#main-content {
+  background-color: var(--main-color);
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10, 10%);
+}
