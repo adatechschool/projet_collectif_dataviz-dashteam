@@ -1,8 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-
 const cors = require("cors");
-
 const request = require("request");
 
 
@@ -17,7 +15,7 @@ var client_id = "def7c58bf1dc4c55bafe1c7c9e0f5331";
 var client_secret = "9b8ef3c114684d9ab02a70350b778dfe";
 
 // Application requests authorization
-const authOptions = {
+ const authOptions = {
   url: "https://accounts.spotify.com/api/token",
   headers: {
     Authorization:
@@ -29,7 +27,7 @@ const authOptions = {
     grant_type: "client_credentials",
   },
   json: true,
-};
+}; 
 
 request.post(authOptions, function (error, response, body) {
   if (!error && response.statusCode === 200) {
