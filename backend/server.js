@@ -18,14 +18,20 @@ app.get("/news/:keyword", async (req, res) => {
   try {
     console.log(req.params)
     let domain = 'techcrunch.com'
+
+    
     const responseNews = await fetch (`https://newsapi.org/v2/everything?q=${req.params.keyword}&sortBy=publishedAt&apiKey=548a9b5db8f04f29b16fc57f77b4e7f1&language=en&language=fr&domains=${domain}`)
+    
     const responseNews2 = await responseNews.json() 
     console.log(responseNews2)
-    res.json({apiNews:responseNews2})
+    res.json({responseNews2})
+    
   } catch (error) {
     res.status(400).json(error.message);
   } 
 });
+
+
 
 
 app.listen(3000, () => {
