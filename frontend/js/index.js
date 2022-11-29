@@ -1,3 +1,4 @@
+
 const fetchData = async () => {
   try {
     const response = await fetch("http://localhost:3000/");
@@ -57,3 +58,74 @@ const fetchData = async () => {
 };
 
 fetchData();
+
+    // NEWS ---------------------------------------------------------------
+
+  const fetchNews = async (categorie) => {
+    try {
+      if (!categorie){
+        const response = await fetch(`http://localhost:3000/news/tech`);
+        const data = await response.json();
+       
+      let article = data.responseNews2.articles
+  
+      //article 1:
+      document.getElementByClassName("title-article").innerHTML=article[0].title
+      document.getElementByClassName("author-article").innerHTML="Written by : " + article[0].author 
+      document.getElementByClassName("date-article").innerHTML="Published at : " + article[0].publishedAt
+      document.getElementByClassName("description-article").innerHTML=article[0].description
+      document.getElementByClassName("link-article").href=article[0].url
+      document.getElementByClassName("img-article").src=article[0].urlToImage
+  
+      //article 2: 
+      document.getElementByClassName("title-article").innerHTML=article[1].title
+      document.getElementByClassName("author-article").innerHTML="Written by : " + article[1].author 
+      document.getElementByClassName("date-article").innerHTML="Published at : " + article[1].publishedAt
+      document.getElementByClassName("description-article").innerHTML=article[1].description
+      document.getElementByClassName("link-article").href=article[1].url
+      document.getElementByClassName("img-article").src=article[1].urlToImage
+  
+      // article 3: 
+      document.getElementByClassName("title-article").innerHTML=article[2].title
+      document.getElementByClassName("author-article").innerHTML="Written by : " + article[2].author 
+      document.getElementByClassName("date-article").innerHTML="Published at : " + article[2].publishedAt
+      document.getElementByClassName("description-article").innerHTML=article[2].description
+      document.getElementByClassName("link-article").href=article[2].url
+      document.getElementByClassName("img-article").src=article[2].urlToImage
+        
+      }else {
+      const response = await fetch(`http://localhost:3000/news/${categorie}`);
+      const data = await response.json();
+      console.log(data);
+
+    let article = data.responseNews2.articles
+      //article 1:
+      document.getElementByClassName("title-article").innerHTML=article[0].title
+      document.getElementByClassName("author-article").innerHTML="Written by : " + article[0].author 
+      document.getElementByClassName("date-article").innerHTML="Published at : " + article[0].publishedAt
+      document.getElementByClassName("description-article").innerHTML=article[0].description
+      document.getElementByClassName("link-article").href=article[0].url
+      document.getElementByClassName("img-article").src=article[0].urlToImage
+  
+      //article 2: 
+      document.getElementByClassName("title-article").innerHTML=article[1].title
+      document.getElementByClassName("author-article").innerHTML="Written by : " + article[1].author 
+      document.getElementByClassName("date-article").innerHTML="Published at : " + article[1].publishedAt
+      document.getElementByClassName("description-article").innerHTML=article[1].description
+      document.getElementByClassName("link-article").href=article[1].url
+      document.getElementByClassName("img-article").src=article[1].urlToImage
+  
+      // article 3: 
+      document.getElementByClassName("title-article").innerHTML=article[2].title
+      document.getElementByClassName("author-article").innerHTML="Written by : " + article[2].author 
+      document.getElementByClassName("date-article").innerHTML="Published at : " + article[2].publishedAt
+      document.getElementByClassName("description-article").innerHTML=article[2].description
+      document.getElementByClassName("link-article").href=article[2].url
+      document.getElementByClassName("img-article").src=article[2].urlToImage
+      }
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
+  fetchNews()
