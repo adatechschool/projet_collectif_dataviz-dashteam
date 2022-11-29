@@ -39,6 +39,12 @@ request.post(authOptions, function (error, response, body) {
   }
 });
 
+// -------------------------------------
+
+const lunchs = require("./lunchs.json")
+
+
+
 /* ----------------------------------------------------------------------------- */
 
 app.get("/", async (req, res) => {
@@ -57,7 +63,7 @@ app.get("/", async (req, res) => {
 
     const responseWeather = await fetch ("https://api.openweathermap.org/data/2.5/weather?lat=48.8566&lon=2.3522&appid=69df7b8d93250c75b0422f77ae3f0484&units=metric&lang=fr");
     const responseWeather2 = await responseWeather.json()
-    res.json({apiWeather:responseWeather2,fact:text})
+    res.json({apiWeather:responseWeather2,fact:text,lunchs:lunchs})
   } catch (error) {
     res.status(400).json(error.message);
   } 
