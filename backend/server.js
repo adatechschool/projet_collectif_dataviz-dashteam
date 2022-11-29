@@ -56,20 +56,21 @@ app.get("/", async (req, res) => {
     let date = d.getDate()
     const response = await fetch("http://numbersapi.com/"+month+"/"+date+"/date") 
     let text = await response.text()
-    
- 
-  
 
+
+    const responseactivity = await fetch("http://www.boredapi.com/api/activity/")
+    const text2 = await responseactivity.text()
 
     const responseWeather = await fetch ("https://api.openweathermap.org/data/2.5/weather?lat=48.8566&lon=2.3522&appid=69df7b8d93250c75b0422f77ae3f0484&units=metric&lang=fr");
     const responseWeather2 = await responseWeather.json()
-    res.json({apiWeather:responseWeather2,fact:text,lunchs:lunchs})
+    
+    res.json({apiWeather:responseWeather2,fact:text,lunchs:lunchs,bored:text2})
   } catch (error) {
     res.status(400).json(error.message);
   } 
 
 
- 
+  
 });
 
 
