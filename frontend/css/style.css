@@ -1,3 +1,190 @@
-#title {
-    color:red;
+@import "reset.css";
+
+:root {
+  --main-color: #131627;
+  --second-color: #1d1f37;
+  --white: #e3f1ff;
+  --grey: #666a87;
+  --purple: #6b42dc;
+}
+
+#main-container {
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+/* ------------------------------ MENU ------------------------------ */
+
+#menu {
+  background-color: var(--second-color);
+  height: 100vh;
+  position: relative;
+}
+
+#menu-content {
+  background-color: var(--second-color);
+  width: 15%;
+  position: fixed;
+  height: 100vh;
+}
+
+#main-content {
+  background-color: var(--main-color);
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(20, 10%);
+}
+
+/* ------------------------------ INTRO ------------------------------ */
+
+#intro {
+  grid-column: 1 / 6;
+  grid-row: 1;
+  padding-top: 3rem;
+  padding-left: 5rem;
+}
+
+#hello {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+#hello::after {
+  content: " ADA Tech School !";
+  color: var(--purple);
+}
+
+#baseline {
+  color: var(--grey);
+  font-size: 1.6rem;
+}
+
+/* ------------------------------ FUNFACT BLOCK ------------------------------ */
+
+#funfact-block {
+  background-color: var(--second-color);
+  grid-row: 2 / 5;
+  grid-column: span 6;
+  border-radius: 2rem;
+  margin: 9rem 5rem 0 5rem;
+}
+
+.title-block {
+  font-size: 2.5rem;
+  color: var(--white);
+  font-weight: bold;
+  padding: 4rem 0 2rem 4rem;
+}
+
+#text-funfact-block {
+  font-size: 1.4rem;
+  color: var(--grey);
+  padding-left: 4rem;
+  padding-right: 25rem;
+  line-height: 2.5rem;
+}
+
+/* ------------------------------ WEATHER BLOCK ------------------------------ */
+
+#weather-block {
+  background-color: var(--second-color);
+  grid-row: 2 / 5;
+  grid-column: 7 / 11;
+  border-radius: 2rem;
+  margin-right: 5rem;
+  margin-top: 2rem;
+  /* background-image: url(); */
+  background-size: cover;
+  background-position: right;
+}
+
+#city-weather-block {
+  font-size: 5rem;
+  color: var(--white);
+  font-weight: bold;
+  padding: 4rem 0rem 0rem 4rem;
+  text-transform: uppercase;
+}
+
+.line {
+  width: 45%;
+  height: 0.1rem;
+  background-color: var(--grey);
+  margin-left: 4rem;
+  margin-top: 2rem;
+}
+
+#degrees-weather-block {
+  font-size: 11rem;
+  color: var(--white);
+  font-weight: bold;
+  padding: 0rem 0rem 0rem 4rem;
+}
+
+/* ------------------------------ NEWS BLOCK ------------------------------ */
+
+#news-block {
+  grid-row: 5 / span 10;
+  grid-column: 1 /7;
+  padding: 0rem 0rem 0rem 4rem;
+}
+
+#title-news-block p {
+  font-size: 3rem;
+  color: var(--white);
+  font-weight: bold;
+  margin-bottom: -0.5rem;
+}
+
+#news-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 6rem 5rem 0rem 0rem;
+}
+
+#filter-news-block ul li {
+  font-size: 1.2rem;
+  color: var(--grey);
+  text-transform: uppercase;
+  display: inline;
+  list-style: none;
+  margin-left: 3rem;
+}
+
+#filter-news-block ul li:hover {
+  color: var(--purple);
+  /* background-color: #6b42dc; */
+  cursor: pointer;
+}
+
+#line-news-block {
+  width: 93%;
+  height: 0.3rem;
+  background-color: var(--second-color);
+  margin: 1rem 0rem 0rem 0.9rem;
+}
+
+/* ------------------------------ ARTICLE ------------------------------ */
+
+.article {
+  grid-row: 6 / span 4;
+  grid-column: 1 /7;
+  /* background-color: red; */
+  margin: 5rem 5rem 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--white);
+}
+
+.author-article {
+  font-size: 1.2rem;
+}
+
+.img-article {
+  background-color: green;
+  height: 26.3rem;
+  width: 24rem;
+  border-radius: 2rem;
 }
