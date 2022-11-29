@@ -35,6 +35,9 @@ request.post(authOptions, function (error, response, body) {
   }
 });
 
+const lunchs = require("./lunchs.json")
+
+
 app.get("/", async (req, res) => {
   try {
 
@@ -58,6 +61,13 @@ app.get("/", async (req, res) => {
     // RANDOM LUNCH ---------------------------------------------------------------
 
     const lunchs = require("./lunchs.json");
+    
+    
+    // RANDOM activity ---------------------------------------------------------------
+    
+    const responseActivity = await fetch("http://www.boredapi.com/api/activity/")
+    const textActivity = await responseActivity.text()
+
 
     // RESPONSE JSON --------------------------------------------------------------
 
@@ -65,7 +75,9 @@ app.get("/", async (req, res) => {
       apiWeather: responseWeather2,
       fact: text,
       lunchs: lunchs,
+      bored: textActivity
     });
+
   } catch (error) {
     res.status(400).json(error.message);
   } 
