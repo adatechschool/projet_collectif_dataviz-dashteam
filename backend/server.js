@@ -9,6 +9,8 @@ app.use(cors());
 
 /* Client Credentials oAuth2 flow to authenticate against the Spotify Accounts. */
 
+document.getElementsByClassName();
+
 var client_id = "def7c58bf1dc4c55bafe1c7c9e0f5331";
 var client_secret = "9b8ef3c114684d9ab02a70350b778dfe";
 
