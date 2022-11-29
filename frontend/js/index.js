@@ -9,7 +9,10 @@ const fetchData = async () => {
 
     // WEATHER --------------------------------------------------------------------
 
-    document.getElementById("date-weather-block").innerHTML = new Date();
+    let date = new Date();
+
+    document.getElementById("date-weather-block").innerHTML =
+      date.toUTCString();
     document.getElementById("city-weather-block").innerHTML =
       data.apiWeather.name;
     document.getElementById("degrees-weather-block").innerHTML =
@@ -45,12 +48,12 @@ const fetchData = async () => {
 
     // RANDOM LUNCHS ---------------------------------------------------------------
 
-    data.lunchs.map((lunch) => {
-      console.log(lunch.type);
-      console.log(lunch.name);
-      console.log(lunch.address);
-      console.log(lunch.googlemap);
-    });
+    // data.lunchs.map((lunch) => {
+    //   console.log(lunch.type);
+    //   console.log(lunch.name);
+    //   console.log(lunch.address);
+    //   console.log(lunch.googlemap);
+    // });
   } catch (error) {
     console.log(error.message);
   }
@@ -60,90 +63,113 @@ fetchData();
 
 // NEWS ---------------------------------------------------------------
 
+function getTech() {
+  fetchNews("tech");
+}
+document.getElementById("link-tech").addEventListener("click", getTech);
+
+function getApps() {
+  fetchNews("apps");
+}
+document.getElementById("link-apps").addEventListener("click", getApps);
+
 const fetchNews = async (categorie) => {
   try {
-    if (!categorie) {
-      const response = await fetch(`http://localhost:3000/news/tech`);
+    if (categorie === undefined) {
+      const response = await fetch(`http://localhost:3000/news/apps`);
       const data = await response.json();
+      let article = data.articles;
+      // dataArticles.map((article) => {
+      //   console.log(dataArticles.length);
 
-      let article = data.responseNews2.articles;
+      //   let titleArticle = document.getElementById("title-article");
+      //   let element = document.createElement("p");
+      //   element.innerHTML = article.title;
+      //   titleArticle.appendChild(element);
+      // });
 
       //article 1:
-      document.getElementsByClassName("title-article").innerHTML =
+      document.getElementsByClassName("title-article")[0].innerHTML =
         article[0].title;
-      document.getElementByClassName("author-article").innerHTML =
-        "Written by : " + article[0].author;
-      document.getElementByClassName("date-article").innerHTML =
+      document.getElementsByClassName("author-article")[0].innerHTML =
+        article[0].author;
+      document.getElementsByClassName("date-article")[0].innerHTML =
         "Published at : " + article[0].publishedAt;
-      document.getElementByClassName("description-article").innerHTML =
+      document.getElementsByClassName("description-article")[0].innerHTML =
         article[0].description;
-      document.getElementByClassName("link-article").href = article[0].url;
-      document.getElementByClassName("img-article").src = article[0].urlToImage;
+      document.getElementsByClassName("link-article")[0].href = article[0].url;
+      document.getElementsByClassName("img-article")[0].src =
+        article[0].urlToImage;
 
       //article 2:
-      document.getElementByClassName("title-article").innerHTML =
+      document.getElementsByClassName("title-article1")[0].innerHTML =
         article[1].title;
-      document.getElementByClassName("author-article").innerHTML =
-        "Written by : " + article[1].author;
-      document.getElementByClassName("date-article").innerHTML =
+      document.getElementsByClassName("author-article1")[0].innerHTML =
+        article[1].author;
+      document.getElementsByClassName("date-article1")[0].innerHTML =
         "Published at : " + article[1].publishedAt;
-      document.getElementByClassName("description-article").innerHTML =
+      document.getElementsByClassName("description-article1")[0].innerHTML =
         article[1].description;
-      document.getElementByClassName("link-article").href = article[1].url;
-      document.getElementByClassName("img-article").src = article[1].urlToImage;
+      document.getElementsByClassName("link-article1")[0].href = article[1].url;
+      document.getElementsByClassName("img-article1")[0].src =
+        article[1].urlToImage;
 
       // article 3:
-      document.getElementByClassName("title-article").innerHTML =
+      document.getElementsByClassName("title-article2")[0].innerHTML =
         article[2].title;
-      document.getElementByClassName("author-article").innerHTML =
-        "Written by : " + article[2].author;
-      document.getElementByClassName("date-article").innerHTML =
+      document.getElementsByClassName("author-article2")[0].innerHTML =
+        article[2].author;
+      document.getElementsByClassName("date-article2")[0].innerHTML =
         "Published at : " + article[2].publishedAt;
-      document.getElementByClassName("description-article").innerHTML =
+      document.getElementsByClassName("description-article2")[0].innerHTML =
         article[2].description;
-      document.getElementByClassName("link-article").href = article[2].url;
-      document.getElementByClassName("img-article").src = article[2].urlToImage;
+      document.getElementsByClassName("link-article2")[0].href = article[2].url;
+      document.getElementsByClassName("img-article2")[0].src =
+        article[2].urlToImage;
     } else {
       const response = await fetch(`http://localhost:3000/news/${categorie}`);
       const data = await response.json();
-      console.log(data);
 
-      let article = data.responseNews2.articles;
+      let article = data.articles;
+
       //article 1:
-      document.getElementByClassName("title-article").innerHTML =
+      document.getElementsByClassName("title-article")[0].innerHTML =
         article[0].title;
-      document.getElementByClassName("author-article").innerHTML =
-        "Written by : " + article[0].author;
-      document.getElementByClassName("date-article").innerHTML =
+      document.getElementsByClassName("author-article")[0].innerHTML =
+        article[0].author;
+      document.getElementsByClassName("date-article")[0].innerHTML =
         "Published at : " + article[0].publishedAt;
-      document.getElementByClassName("description-article").innerHTML =
+      document.getElementsByClassName("description-article")[0].innerHTML =
         article[0].description;
-      document.getElementByClassName("link-article").href = article[0].url;
-      document.getElementByClassName("img-article").src = article[0].urlToImage;
+      document.getElementsByClassName("link-article")[0].href = article[0].url;
+      document.getElementsByClassName("img-article")[0].src =
+        article[0].urlToImage;
 
       //article 2:
-      document.getElementByClassName("title-article").innerHTML =
+      document.getElementsByClassName("title-article1")[0].innerHTML =
         article[1].title;
-      document.getElementByClassName("author-article").innerHTML =
-        "Written by : " + article[1].author;
-      document.getElementByClassName("date-article").innerHTML =
+      document.getElementsByClassName("author-article1")[0].innerHTML =
+        article[1].author;
+      document.getElementsByClassName("date-article1")[0].innerHTML =
         "Published at : " + article[1].publishedAt;
-      document.getElementByClassName("description-article").innerHTML =
+      document.getElementsByClassName("description-article1")[0].innerHTML =
         article[1].description;
-      document.getElementByClassName("link-article").href = article[1].url;
-      document.getElementByClassName("img-article").src = article[1].urlToImage;
+      document.getElementsByClassName("link-article1")[0].href = article[1].url;
+      document.getElementsByClassName("img-article1")[0].src =
+        article[1].urlToImage;
 
       // article 3:
-      document.getElementByClassName("title-article").innerHTML =
+      document.getElementsByClassName("title-article2")[0].innerHTML =
         article[2].title;
-      document.getElementByClassName("author-article").innerHTML =
-        "Written by : " + article[2].author;
-      document.getElementByClassName("date-article").innerHTML =
+      document.getElementsByClassName("author-article2")[0].innerHTML =
+        article[2].author;
+      document.getElementsByClassName("date-article2")[0].innerHTML =
         "Published at : " + article[2].publishedAt;
-      document.getElementByClassName("description-article").innerHTML =
+      document.getElementsByClassName("description-article2")[0].innerHTML =
         article[2].description;
-      document.getElementByClassName("link-article").href = article[2].url;
-      document.getElementByClassName("img-article").src = article[2].urlToImage;
+      document.getElementsByClassName("link-article2")[0].href = article[2].url;
+      document.getElementsByClassName("img-article2")[0].src =
+        article[2].urlToImage;
     }
   } catch (error) {
     console.log(error.message);

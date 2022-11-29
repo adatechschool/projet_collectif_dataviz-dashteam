@@ -9,33 +9,49 @@ app.use(cors());
 
 /* Client Credentials oAuth2 flow to authenticate against the Spotify Accounts. */
 
-var client_id = "def7c58bf1dc4c55bafe1c7c9e0f5331";
-var client_secret = "9b8ef3c114684d9ab02a70350b778dfe";
+// var client_id = "def7c58bf1dc4c55bafe1c7c9e0f5331";
+// var client_secret = "9b8ef3c114684d9ab02a70350b778dfe";
 
-// Application requests authorization
-const authOptions = {
-  url: "https://accounts.spotify.com/api/token",
-  headers: {
-    Authorization:
-      "Basic " +
-      Buffer.from(client_id + ":" + client_secret).toString("base64"),
-    "Content-Type": "application/x-www-form-urlencoded",
-  },
-  form: {
-    grant_type: "client_credentials",
-  },
-  json: true,
-};
+// // Application requests authorization
+// const authOptions = {
+//   url: "https://accounts.spotify.com/api/token",
+//   headers: {
+//     Authorization:
+//       "Basic " +
+//       Buffer.from(client_id + ":" + client_secret).toString("base64"),
+//     "Content-Type": "application/x-www-form-urlencoded",
+//   },
+//   form: {
+//     grant_type: "client_credentials",
+//   },
+//   json: true,
+// };
 
-request.post(authOptions, function (error, response, body) {
-  if (!error && response.statusCode === 200) {
-    // Use the access token to access the Spotify Web API
-    const token = body.access_token;
-    console.log(token);
-  }
-});
+// let token = "";
 
-const lunchs = require("./lunchs.json");
+// request.post(authOptions, function (error, response, body) {
+//   if (!error && response.statusCode === 200) {
+//     // Use the access token to access the Spotify Web API
+//     token = body.access_token;
+//   }
+// });
+
+// app.get("/spotify", async (req, res) => {
+//   try {
+//     const data = await axios.get(
+//       "https://api.spotify.com/v1/me/top/tracks?limit=5",
+//       {
+//         headers: {
+//           Authorization: "Bearer " + token,
+//         },
+//       }
+//     );
+//     console.log(data);
+//     res.json(data);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// });
 
 app.get("/", async (req, res) => {
   try {
@@ -82,14 +98,13 @@ app.get("/", async (req, res) => {
 
 app.get("/news/:keyword", async (req, res) => {
   try {
-    console.log(req.params);
     let domain = "techcrunch.com";
     const responseNews = await fetch(
       `https://newsapi.org/v2/everything?q=${req.params.keyword}&sortBy=publishedAt&apiKey=548a9b5db8f04f29b16fc57f77b4e7f1&language=en&language=fr&domains=${domain}`
     );
     const responseNews2 = await responseNews.json();
-    console.log(responseNews2);
-    res.json({ responseNews2 });
+
+    res.json(responseNews2);
   } catch (error) {
     res.status(400).json(error.message);
   }

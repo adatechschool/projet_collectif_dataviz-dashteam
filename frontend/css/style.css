@@ -40,7 +40,7 @@
 #intro {
   grid-column: 1 / 6;
   grid-row: 1;
-  padding-top: 3rem;
+  padding-top: 5rem;
   padding-left: 5rem;
 }
 
@@ -64,17 +64,20 @@
 
 #funfact-block {
   background-color: var(--second-color);
-  grid-row: 2 / 5;
+  grid-row: 2 / 4;
   grid-column: span 6;
   border-radius: 2rem;
-  margin: 9rem 5rem 0 5rem;
+  margin: 3rem 5rem 0rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title-block {
   font-size: 2.5rem;
   color: var(--white);
   font-weight: bold;
-  padding: 4rem 0 2rem 4rem;
+  padding: 0rem 0rem 2rem 4rem;
 }
 
 #text-funfact-block {
@@ -89,12 +92,14 @@
 
 #weather-block {
   background-color: var(--second-color);
-  grid-row: 2 / 5;
+  grid-row: 1 / 4;
   grid-column: 7 / 11;
   border-radius: 2rem;
   margin-right: 5rem;
-  margin-top: 2rem;
-  /* background-image: url(); */
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-size: cover;
   background-position: right;
 }
@@ -103,7 +108,7 @@
   font-size: 5rem;
   color: var(--white);
   font-weight: bold;
-  padding: 4rem 0rem 0rem 4rem;
+  padding: 1rem 0rem 0rem 4rem;
   text-transform: uppercase;
 }
 
@@ -116,16 +121,22 @@
 }
 
 #degrees-weather-block {
-  font-size: 11rem;
+  font-size: 9rem;
   color: var(--white);
   font-weight: bold;
   padding: 0rem 0rem 0rem 4rem;
 }
 
+#date-weather-block {
+  font-size: 1.7rem;
+  color: var(--white);
+  padding: 4rem 0rem 0rem 4rem;
+}
+
 /* ------------------------------ NEWS BLOCK ------------------------------ */
 
 #news-block {
-  grid-row: 5 / span 10;
+  grid-row: 4 / span 10;
   grid-column: 1 /7;
   padding: 0rem 0rem 0rem 4rem;
 }
@@ -145,7 +156,7 @@
 }
 
 #filter-news-block ul li {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--grey);
   text-transform: uppercase;
   display: inline;
@@ -169,22 +180,145 @@
 /* ------------------------------ ARTICLE ------------------------------ */
 
 .article {
-  grid-row: 6 / span 4;
+  grid-row: 5 / span 3;
   grid-column: 1 /7;
-  /* background-color: red; */
-  margin: 5rem 5rem 0 5rem;
-  display: flex;
-  justify-content: space-between;
+  margin: 2rem 5rem 0 5rem;
   color: var(--white);
 }
 
-.author-article {
-  font-size: 1.2rem;
+.article1 {
+  grid-row: 8 / span 3;
+  grid-column: 1 /7;
+  margin: 0rem 5rem 0 5rem;
+  color: var(--white);
 }
 
-.img-article {
+.article2 {
+  grid-row: 11 / span 3;
+  grid-column: 1 /7;
+  margin: 0rem 5rem 0 5rem;
+  color: var(--white);
+}
+
+.article-content,
+.article-content1,
+.article-content2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-article,
+.text-article1,
+.text-article2 {
+  width: 50rem;
+}
+
+.header-text-article,
+.header-text-article1,
+.header-text-article2 {
+  display: flex;
+}
+
+.author-article,
+.author-article1,
+.author-article2 {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.author-article::before,
+.author-article1::before,
+.author-article2::before {
+  content: "Written by ";
+  color: var(--grey);
+}
+
+.date-article,
+.date-article1,
+.date-article2 {
+  font-size: 1.2rem;
+  color: var(--grey);
+}
+
+.date-article::before,
+.date-article1::before,
+.date-article2::before {
+  content: " • ";
+}
+
+.title-article,
+.title-article1,
+.title-article2 {
+  margin-top: 3rem;
+  margin-right: 3rem;
+  font-size: 1.8rem;
+  color: var(--white);
+  font-weight: bold;
+}
+
+.description-article,
+.description-article1,
+.description-article2 {
+  margin-top: 1.5rem;
+  margin-right: 3rem;
+  font-size: 1.4rem;
+  color: var(--grey);
+  line-height: 2rem;
+}
+
+.img-article,
+.img-article1,
+.img-article2 {
   background-color: green;
   height: 26.3rem;
   width: 24rem;
   border-radius: 2rem;
+  object-fit: cover;
+}
+
+.btn-article,
+.btn-article1,
+.btn-article2 {
+  margin-top: 3rem;
+  background-color: var(--purple);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1.5rem 3rem;
+  border-radius: 1rem;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+}
+
+.line-article {
+  width: 100%;
+  height: 0.3rem;
+  background-color: var(--second-color);
+  margin-top: 5rem;
+}
+
+/* ------------------------------ SPOTIFY BLOCK ------------------------------ */
+
+#spotify-block {
+  grid-row: 4 / span 7;
+  grid-column: 7 / 11;
+  margin-right: 5rem;
+  margin-top: 8rem;
+}
+
+#main .ae {
+  color: var(--purple);
+}
+
+/* ------------------------------ PRACTICE BLOCK ------------------------------ */
+
+#practice-block {
+  background-color: var(--second-color);
+  grid-row: 11 / span 4;
+  grid-column: 7 / 11;
+  border-radius: 2rem;
+  margin-right: 5rem;
+  margin-top: 5rem;
 }
