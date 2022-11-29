@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <p id="title">Bonjour les coquelicots</p>
-
-    <div id='news_block'> 
-        <div id ="keyword">  <button onclick="fetchNews('tech')">TECH</button> <button onclick="fetchNews('app')">APP</button> <button onclick="fetchNews('javascript')">JAVASCRIPT</button>
-        
-            <div id="article1" >
-                
-                <img id="newsImage1" src=""/> 
-                <h1 id="newsTitle1"></h1>
-                <p id ="author1"></p>
-                <p id ="date1"></p>
-                <p id="newsDescription1"></p>
-                <a id="link1" href="">  
-                    <button> Learn More </button>
-                </a>
-            </div>
-            <div id="article2">
-                <img id="newsImage2" src=""/>
-                <p id="keyword2"></p>
-                <h1 id="newsTitle2"></h1>
-                <p id ="author2"></p>
-                <p id ="date2"></p>
-                <p id="newsDescription2"></p>
-                <a id="link2" href="">  
-                    <button> Learn More </button>
-                </a>
-
-            </div>
-            <div id="article3">
-                <img id="newsImage3" src=""/>
-                <p id="keyword3"></p>
-                <h1 id="newsTitle3"></h1>
-                <p id ="author3"></p>
-                <p id ="date3"></p>
-                <p id="newsDescription3"></p>
-                <a id="link3" href="">  
-                    <button> Learn More </button>
-                </a>
-            </div>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>DevDash</title>
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="menu">
+        <div id="menu-content"></div>
+      </div>
+      <div id="main-content">
+        <div id="intro">
+          <p id="hello">Hello,</p>
+          <p id="baseline">It's good to see you again.</p>
         </div>
-        
+        <div id="funfact-block">
+          <p class="title-block">📖 Fun fact of the day.</p>
+          <p id="text-funfact-block"></p>
+        </div>
+        <div id="weather-block">
+          <p id="date-weather-block"></p>
+          <p id="city-weather-block"></p>
+          <div class="line"></div>
+          <p id="degrees-weather-block"></p>
+        </div>
+        <div id="news-block">
+          <div id="news-block-header">
+            <div id="title-news-block"><p>🔥 News</p></div>
+            <div id="filter-news-block">
+              <ul>
+                <li onclick="fetchNews('tech')">Tech</li>
+                <li onclick="fetchNews('app')">App</li>
+                <li onclick="fetchNews('javascript')">Javascript</li>
+                <li onclick="fetchNews('react')">React JS</li>
+                <li>Three.js</li>
+              </ul>
+            </div>
+          </div>
+          <div id="line-news-block"></div>
+        </div>
+        <div class="article">
+          <div class="text-article">
+            <div class="header-text-article">
+              <p class="author-article">Hemendra Khatik</p>
+              <p class="date-article">Jun 28</p>
+            </div> 
+            <p class="title-article">
+            </p>
+            <p class="description-article">
+         
+            </p>
+            <button class="btn-article">Learn more</button>
+          </div>
+
+          <img src="./img/test2.jpg" alt="" class="img-article" />
+        </div>
+      </div>
     </div>
 
-<script src="./js/index.js"></script>    
-</body>
+    <script type="module" src="./js/index.js"></script>
+  </body>
 </html>
