@@ -41,6 +41,7 @@ const lunchs = require("./lunchs.json")
 app.get("/", async (req, res) => {
   try {
 
+
     // FUN FACT -------------------------------------------------------------------
 
     let d = new Date();
@@ -77,11 +78,12 @@ app.get("/", async (req, res) => {
       lunchs: lunchs,
       bored: textActivity
     });
-
+    
   } catch (error) {
     res.status(400).json(error.message);
   } 
 });
+
 
 app.get("/news/:keyword", async (req, res) => {
   try {
@@ -95,6 +97,7 @@ app.get("/news/:keyword", async (req, res) => {
   } catch (error) {
     res.status(400).json(error.message);
   } 
+
 });
 
 
