@@ -7,7 +7,8 @@ const fetchData = async () => {
     // FUN FACT -------------------------------------------------------------------
 
     document.getElementById("text-funfact-block").innerHTML = data.fact;
-    console.log(data.fact.text);
+    
+
     // WEATHER --------------------------------------------------------------------
 
     document.getElementById("date-weather-block").innerHTML = new Date();
@@ -47,10 +48,10 @@ const fetchData = async () => {
     // RANDOM LUNCHS ---------------------------------------------------------------
 
     data.lunchs.map((lunch) => {
-      console.log(lunch.type);
+/*       console.log(lunch.type);
       console.log(lunch.name);
       console.log(lunch.address);
-      console.log(lunch.googlemap);
+      console.log(lunch.googlemap); */
     });
   } catch (error) {
     console.log(error.message);
@@ -61,71 +62,106 @@ fetchData();
 
     // NEWS ---------------------------------------------------------------
 
+
   const fetchNews = async (categorie) => {
     try {
-      if (!categorie){
+       if (!categorie){
         const response = await fetch(`http://localhost:3000/news/tech`);
         const data = await response.json();
        
-      let article = data.responseNews2.articles
-  
+      let article = data.articles
+     
       //article 1:
-      document.getElementByClassName("title-article").innerHTML=article[0].title
-      document.getElementByClassName("author-article").innerHTML="Written by : " + article[0].author 
-      document.getElementByClassName("date-article").innerHTML="Published at : " + article[0].publishedAt
-      document.getElementByClassName("description-article").innerHTML=article[0].description
-      document.getElementByClassName("link-article").href=article[0].url
-      document.getElementByClassName("img-article").src=article[0].urlToImage
+      document.getElementsByClassName("title-article")[0].innerHTML=article[0].title
+      document.getElementsByClassName("author-article")[0].innerHTML="Written by : " + article[0].author 
+      document.getElementsByClassName("date-article")[0].innerHTML="Published at : " + article[0].publishedAt
+      document.getElementsByClassName("description-article")[0].innerHTML=article[0].description
+      document.getElementsByClassName("link-article")[0].href=article[0].url
+      document.getElementsByClassName("img-article")[0].src=article[0].urlToImage
   
       //article 2: 
-      document.getElementByClassName("title-article").innerHTML=article[1].title
-      document.getElementByClassName("author-article").innerHTML="Written by : " + article[1].author 
-      document.getElementByClassName("date-article").innerHTML="Published at : " + article[1].publishedAt
-      document.getElementByClassName("description-article").innerHTML=article[1].description
-      document.getElementByClassName("link-article").href=article[1].url
-      document.getElementByClassName("img-article").src=article[1].urlToImage
+      document.getElementsByClassName("title-article")[0].innerHTML=article[1].title
+      document.getElementsByClassName("author-article")[0].innerHTML="Written by : " + article[1].author 
+      document.getElementsByClassName("date-article")[0].innerHTML="Published at : " + article[1].publishedAt
+      document.getElementsByClassName("description-article")[0].innerHTML=article[1].description
+      document.getElementsByClassName("link-article")[0].href=article[1].url
+      document.getElementsByClassName("img-article")[0].src=article[1].urlToImage
   
       // article 3: 
-      document.getElementByClassName("title-article").innerHTML=article[2].title
-      document.getElementByClassName("author-article").innerHTML="Written by : " + article[2].author 
-      document.getElementByClassName("date-article").innerHTML="Published at : " + article[2].publishedAt
-      document.getElementByClassName("description-article").innerHTML=article[2].description
-      document.getElementByClassName("link-article").href=article[2].url
-      document.getElementByClassName("img-article").src=article[2].urlToImage
+      document.getElementsByClassName("title-article")[0].innerHTML=article[2].title
+      document.getElementsByClassName("author-article")[0].innerHTML="Written by : " + article[2].author 
+      document.getElementsByClassName("date-article")[0].innerHTML="Published at : " + article[2].publishedAt
+      document.getElementsByClassName("description-article")[0].innerHTML=article[2].description
+      document.getElementsByClassName("link-article")[0].href=article[2].url
+      document.getElementsByClassName("img-article")[0].src=article[2].urlToImage
         
-      }else {
+      } else { 
+
       const response = await fetch(`http://localhost:3000/news/${categorie}`);
       const data = await response.json();
-      console.log(data);
 
-    let article = data.responseNews2.articles
+      let article = data.articles
+      
+
+   
+
+      //je veux changer mettre tech a la place de categorie 
+
       //article 1:
-      document.getElementByClassName("title-article").innerHTML=article[0].title
-      document.getElementByClassName("author-article").innerHTML="Written by : " + article[0].author 
-      document.getElementByClassName("date-article").innerHTML="Published at : " + article[0].publishedAt
-      document.getElementByClassName("description-article").innerHTML=article[0].description
-      document.getElementByClassName("link-article").href=article[0].url
-      document.getElementByClassName("img-article").src=article[0].urlToImage
+      document.getElementsByClassName('title-article')[0].innerHTML=article[0].title
+      document.getElementsByClassName("author-article")[0].innerHTML="Written by : " + article[0].author 
+      document.getElementsByClassName("date-article")[0].innerHTML="Published at : " + article[0].publishedAt
+      document.getElementsByClassName("description-article")[0].innerHTML=article[0].description
+      document.getElementsByClassName("link-article")[0].href=article[0].url 
+      document.getElementsByClassName("img-article")[0].src=article[0].urlToImage
   
       //article 2: 
-      document.getElementByClassName("title-article").innerHTML=article[1].title
-      document.getElementByClassName("author-article").innerHTML="Written by : " + article[1].author 
-      document.getElementByClassName("date-article").innerHTML="Published at : " + article[1].publishedAt
-      document.getElementByClassName("description-article").innerHTML=article[1].description
-      document.getElementByClassName("link-article").href=article[1].url
-      document.getElementByClassName("img-article").src=article[1].urlToImage
+      document.getElementsByClassName("title-article")[0].innerHTML=article[1].title
+      document.getElementsByClassName("author-article")[0].innerHTML="Written by : " + article[1].author 
+      document.getElementsByClassName("date-article")[0].innerHTML="Published at : " + article[1].publishedAt
+      document.getElementsByClassName("description-article")[0].innerHTML=article[1].description
+      document.getElementsByClassName("link-article")[0].href=article[1].url
+      document.getElementsByClassName("img-article")[0].src=article[1].urlToImage
   
       // article 3: 
-      document.getElementByClassName("title-article").innerHTML=article[2].title
-      document.getElementByClassName("author-article").innerHTML="Written by : " + article[2].author 
-      document.getElementByClassName("date-article").innerHTML="Published at : " + article[2].publishedAt
-      document.getElementByClassName("description-article").innerHTML=article[2].description
-      document.getElementByClassName("link-article").href=article[2].url
-      document.getElementByClassName("img-article").src=article[2].urlToImage
-      }
+      document.getElementsByClassName("title-article")[0].innerHTML=article[2].title
+      document.getElementsByClassName("author-article")[0].innerHTML="Written by : " + article[2].author 
+      document.getElementsByClassName("date-article")[0].innerHTML="Published at : " + article[2].publishedAt
+      document.getElementsByClassName("description-article")[0].innerHTML=article[2].description
+      document.getElementsByClassName("link-article")[0].href=article[2].url
+      document.getElementsByClassName("img-article")[0].src=article[2].urlToImage
+     } 
     } catch (error) {
       console.log(error.message)
     }
   }
 
   fetchNews()
+
+// filtrage des news : 
+
+  const linkTech = document.querySelector(".link-tech");
+  function fetchTech(){
+    fetchNews('tech')
+  }
+  linkTech.addEventListener("click",fetchTech) 
+
+
+  const linkApp = document.querySelector(".link-app");
+  function fetchApp(){
+    fetchNews('app')
+  }
+  linkApp.addEventListener("click",fetchApp) 
+
+
+  const linkJavascript = document.querySelector(".link-javascript");
+  function fetchJavascript(){
+    fetchNews('javascript')
+  }
+  linkJavascript.addEventListener("click",fetchJavascript) 
+
+  const linkReact = document.querySelector(".link-react");
+  function fetchReact(){
+    fetchNews('react')
+  }
+  linkReact.addEventListener("click",fetchReact)

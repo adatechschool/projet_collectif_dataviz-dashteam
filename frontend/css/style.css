@@ -188,3 +188,9 @@
   width: 24rem;
   border-radius: 2rem;
 }
+
+.title-article {
+  font-size: 1.8rem;
+  color: var(--white);
+
+}

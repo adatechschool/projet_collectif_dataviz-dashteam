@@ -35,8 +35,6 @@ request.post(authOptions, function (error, response, body) {
   }
 });
 
-const lunchs = require("./lunchs.json")
-
 
 app.get("/", async (req, res) => {
   try {
@@ -63,6 +61,7 @@ app.get("/", async (req, res) => {
 
     const lunchs = require("./lunchs.json");
     
+        // faire script qui trouve random dans les resto, dans le front il faut import 
     
     // RANDOM activity ---------------------------------------------------------------
     
@@ -92,7 +91,7 @@ app.get("/news/:keyword", async (req, res) => {
     const responseNews = await fetch (`https://newsapi.org/v2/everything?q=${req.params.keyword}&sortBy=publishedAt&apiKey=548a9b5db8f04f29b16fc57f77b4e7f1&language=en&language=fr&domains=${domain}`)
     const responseNews2 = await responseNews.json() 
     console.log(responseNews2)
-    res.json({responseNews2})
+    res.json(responseNews2)
     
   } catch (error) {
     res.status(400).json(error.message);
