@@ -8,18 +8,61 @@
     <title>DevDash</title>
   </head>
   <body>
-    <!-- <p id="title">Bonjour les coquelicots</p>
-
-    <div id = "weather_block">
-        <img id ="icons" src="" alt="sunny icon"/>
-        <p id ="icon_code"></p>
-        <p id ="ville"> </p> 
-        <p id ="temperature"> </p>
-    </div> -->
-
     <div id="main-container">
-      <div id="menu"></div>
-      <div id="main-content"></div>
+      <div id="menu">
+        <div id="menu-content"></div>
+      </div>
+      <div id="main-content">
+        <div id="intro">
+          <p id="hello">Hello,</p>
+          <p id="baseline">It's good to see you again.</p>
+        </div>
+        <div id="funfact-block">
+          <p class="title-block">📖 Fun fact of the day.</p>
+          <p id="text-funfact-block"></p>
+        </div>
+        <div id="weather-block">
+          <p id="date-weather-block"></p>
+          <p id="city-weather-block"></p>
+          <div class="line"></div>
+          <p id="degrees-weather-block"></p>
+        </div>
+        <div id="news-block">
+          <div id="news-block-header">
+            <div id="title-news-block"><p>🔥 News</p></div>
+            <div id="filter-news-block">
+              <ul>
+                <li>Javascript</li>
+                <li>Typescript</li>
+                <li>React</li>
+                <li>Node JS</li>
+                <li>Three.js</li>
+              </ul>
+            </div>
+          </div>
+          <div id="line-news-block"></div>
+        </div>
+        <div class="article">
+          <div class="text-article">
+            <div class="header-text-article">
+              <p class="author-article">Hemendra Khatik</p>
+              <p class="date-article">Jun 28</p>
+            </div>
+
+            <p class="title-article">
+              React Beautiful Conditional Rendering With "RenderWhen"
+            </p>
+            <p class="description-article">
+              Conditional rendering is one of the most commonly used in React.
+              As the application grows and things get complex, conditional
+              rendering...
+            </p>
+            <button class="btn-article">Learn more</button>
+          </div>
+
+          <img src="./img/test2.jpg" alt="" class="img-article" />
+        </div>
+      </div>
     </div>
 
     <script type="module" src="./js/index.js"></script>
