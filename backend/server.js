@@ -2,6 +2,9 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const request = require("request");
+// const axios = require("axios");
+// const qs = require("qs");
+
 const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
@@ -29,25 +32,28 @@ app.use(cors());
 
 // let token = "";
 
-// request.post(authOptions, function (error, response, body) {
+// request.post(authOptions, async function (error, response, body) {
 //   if (!error && response.statusCode === 200) {
 //     // Use the access token to access the Spotify Web API
 //     token = body.access_token;
+//     console.log(body);
 //   }
 // });
 
 // app.get("/spotify", async (req, res) => {
 //   try {
+//     console.log("token----->", token);
 //     const data = await axios.get(
-//       "https://api.spotify.com/v1/me/top/tracks?limit=5",
+//       "https://api.spotify.com/v1/tracks/2TpxZ7JUBn3uw46aR7qd6V",
 //       {
 //         headers: {
 //           Authorization: "Bearer " + token,
 //         },
 //       }
 //     );
-//     console.log(data);
+
 //     res.json(data);
+//     console.log("response----->", data);
 //   } catch (error) {
 //     console.log(error.message);
 //   }

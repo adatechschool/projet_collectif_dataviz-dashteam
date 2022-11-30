@@ -3,6 +3,9 @@ const fetchData = async () => {
     const response = await fetch("http://localhost:3000/");
     const data = await response.json();
 
+    // let yourName = window.prompt("What is your name ?");
+    // document.getElementById("your-name").innerHTML = yourName;
+
     // FUN FACT -------------------------------------------------------------------
 
     document.getElementById("text-funfact-block").innerHTML = data.fact;
@@ -48,12 +51,32 @@ const fetchData = async () => {
 
     // RANDOM LUNCHS ---------------------------------------------------------------
 
-    // data.lunchs.map((lunch) => {
-    //   console.log(lunch.type);
-    //   console.log(lunch.name);
-    //   console.log(lunch.address);
-    //   console.log(lunch.googlemap);
-    // });
+    const dataLunchs = data.lunchs;
+
+    function random_lunch(data) {
+      let result = data[Math.floor(Math.random() * data.length)];
+      document.getElementById("name-lunch").innerHTML = result.name;
+      document.getElementById("type-lunch").innerHTML = result.type;
+      document.getElementById("address-lunch").innerHTML = result.address;
+      document.getElementsByClassName("link-map")[0].href = result.googlemap;
+      document.getElementById("img-lunch").src = result.image;
+    }
+
+    document
+      .getElementsByClassName("btn-lunch-block")[0]
+      .addEventListener("click", getRandomLunch);
+
+    function getRandomLunch() {
+      document.getElementsByClassName("bg-lunch")[0].classList.add("bg-hide");
+      document
+        .getElementsByClassName("link-map")[0]
+        .classList.remove("add-map");
+
+      document
+        .getElementsByClassName("img-lunch-content")[0]
+        .classList.remove("add-img-lunch");
+      random_lunch(dataLunchs);
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -73,12 +96,24 @@ function getApps() {
 }
 document.getElementById("link-apps").addEventListener("click", getApps);
 
+function getCrypto() {
+  fetchNews("crypto");
+}
+document.getElementById("link-crypto").addEventListener("click", getCrypto);
+
+function getSecurity() {
+  fetchNews("security");
+}
+document.getElementById("link-crypto").addEventListener("click", getSecurity);
+
 const fetchNews = async (categorie) => {
   try {
     if (categorie === undefined) {
       const response = await fetch(`http://localhost:3000/news/apps`);
       const data = await response.json();
+
       let article = data.articles;
+
       // dataArticles.map((article) => {
       //   console.log(dataArticles.length);
 

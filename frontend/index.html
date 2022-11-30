@@ -10,23 +10,78 @@
   <body>
     <div id="main-container">
       <div id="menu">
-        <div id="menu-content"></div>
+        <div id="menu-content">
+          <img id="logo" src="/frontend/img/logo_dawn.svg" alt="" />
+        </div>
       </div>
       <div id="main-content">
+        <!-------------------------  INTRO BLOCK ----------------------------->
+
         <div id="intro">
           <p id="hello">Hello,</p>
+          <p id="your-name"></p>
           <p id="baseline">It's good to see you again.</p>
         </div>
+
+        <!-------------------------  FACT BLOCK ------------------------------>
+
         <div id="funfact-block">
           <p class="title-block">📖 Fact of the day.</p>
           <p id="text-funfact-block"></p>
         </div>
+
+        <!-------------------------  WEATHER BLOCK --------------------------->
+
         <div id="weather-block">
           <p id="date-weather-block"></p>
           <p id="city-weather-block"></p>
           <div class="line"></div>
           <p id="degrees-weather-block"></p>
         </div>
+
+        <!-------------------------  SPOTIFY BLOCK --------------------------->
+
+        <div id="spotify-block">
+          <iframe
+            style="border-radius: 12px"
+            src="https://open.spotify.com/embed/playlist/2vJNVV27Lya8oXXIv7cBzp?utm_source=generator&theme=0"
+            width="100%"
+            height="500"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+
+        <!-------------------------  PRACTICE BLOCK --------------------------->
+
+        <div id="practice-block">
+          <p id="title-practice-block">🎓 Do you want to practice JS ?</p>
+          <p id="description-practice-block">
+            You will find exercises classified by category. <br />You will also
+            find the corrections of all the exercises.
+          </p>
+          <a
+            href="https://incongruous-ash-ac2.notion.site/Exercices-JavaScript-73330812488846ed828c2981ab5250b6"
+            target="_blank"
+          >
+            <div class="btn-block">
+              <p>Let's practice</p>
+              <div class="icon-block">
+                <img
+                  class="icon-arrow"
+                  src="/frontend/img/arrow.png"
+                  alt="arrow next"
+                />
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div id="ada-block"></div>
+
+        <!-------------------------  NEWS BLOCK --------------------------->
+
         <div id="news-block">
           <div id="news-block-header">
             <div id="title-news-block"><p>🔥 News</p></div>
@@ -41,29 +96,6 @@
           </div>
           <div id="line-news-block"></div>
         </div>
-
-        <div id="spotify-block">
-          <iframe
-            style="border-radius: 12px"
-            src="https://open.spotify.com/embed/playlist/2vJNVV27Lya8oXXIv7cBzp?utm_source=generator&theme=0"
-            width="100%"
-            height="500"
-            frameborder="0"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          ></iframe>
-        </div>
-
-        <div id="practice-block">
-          <p id="title-practice-block">🎓 Do you want to practice JS ?</p>
-          <p id="description-practice-block">
-            You will find exercises classified by category. You will also find
-            the corrections of all the exercises.
-          </p>
-          <div id="btn-practice-block">Let's practice</div>
-        </div>
-
-        <!-- -----------------------  ARTICLE 0 ----------------------- -->
 
         <div class="article">
           <div class="article-content">
@@ -84,7 +116,6 @@
 
           <div class="line-article"></div>
         </div>
-        <!-- -----------------------  ARTICLE 1 ----------------------- -->
 
         <div class="article1">
           <div class="article-content1">
@@ -106,7 +137,6 @@
           <div class="line-article"></div>
         </div>
 
-        <!-- -----------------------  ARTICLE 2 ----------------------- -->
         <div class="article2">
           <div class="article-content2">
             <div class="text-article2">
@@ -126,9 +156,53 @@
 
           <div class="line-article"></div>
         </div>
+
+        <!-------------------------  RANDOM LUNCH BLOCK --------------------------->
+        <!-- <div id="title-lunch-block">🍕 Time to lunch!</div> -->
+        <div id="lunch-block">
+          <div id="left-lunch">
+            <div id="text-lunch">
+              <p id="title-lunch">🍕 Time to lunch ?</p>
+              <p id="description-lunch">
+                But you don't know what to eat for lunch ? <br />Let us choose
+                for you! Click the button as many times <br />as you want!
+                Enjoy! ✌️
+              </p>
+            </div>
+            <div class="btn-lunch-block">
+              <p>Try it</p>
+              <div class="icon-block">
+                <img
+                  class="icon-arrow"
+                  src="/frontend/img/arrow.png"
+                  alt="arrow next"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="right-lunch">
+            <img src="/frontend/img/food.png" alt="" class="bg-lunch" />
+            <div id="text-right-lunch">
+              <div id="name-lunch"></div>
+              <div id="type-lunch"></div>
+              <div id="address-lunch"></div>
+              <a class="link-map add-map" target="_blank" href="">Let's go!</a>
+            </div>
+            <div class="img-lunch-content add-img-lunch">
+              <img src="" id="img-lunch" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div id="footer"></div>
+
+        <!------------------------------------------------------------------------>
       </div>
     </div>
 
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>
+
+<div id="name-lunch"></div>
+<div id="adress-lunch"></div>
