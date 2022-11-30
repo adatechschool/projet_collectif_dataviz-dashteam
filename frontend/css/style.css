@@ -194,3 +194,9 @@
   color: var(--white);
 
 }
+
+#lunch-block {
+  grid-row: 10 / span 3;
+  grid-column: span 7;
+  background-color: white;
+}

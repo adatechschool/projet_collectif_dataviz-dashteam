@@ -3,7 +3,6 @@ const fetchData = async () => {
   try {
     const response = await fetch("http://localhost:3000/");
     const data = await response.json();
-
     // FUN FACT -------------------------------------------------------------------
 
     document.getElementById("text-funfact-block").innerHTML = data.fact;
@@ -47,12 +46,26 @@ const fetchData = async () => {
 
     // RANDOM LUNCHS ---------------------------------------------------------------
 
-    data.lunchs.map((lunch) => {
-/*       console.log(lunch.type);
-      console.log(lunch.name);
-      console.log(lunch.address);
-      console.log(lunch.googlemap); */
-    });
+
+    const tabloLunch = (data.lunchs)
+
+    function random_lunch(tabloLunch){
+       let result = tabloLunch[Math.floor(Math.random()*tabloLunch.length)]
+       console.log(result)
+       document.getElementById("name-lunch").innerHTML=result.name
+       document.getElementById("type-lunch").innerHTML=result.type
+       document.getElementById("address-lunch").innerHTML=result.address
+       document.getElementById('link-map').href=result.googlemap
+       console.log(result.googlemap)
+
+    }    
+
+    document.getElementById('btn-random').addEventListener("click",getRandomLunch)
+    function getRandomLunch (){
+      random_lunch(tabloLunch)
+    }
+
+    
   } catch (error) {
     console.log(error.message);
   }

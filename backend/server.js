@@ -58,11 +58,11 @@ app.get("/", async (req, res) => {
     const responseWeather2 = await responseWeather.json();
 
     // RANDOM LUNCH ---------------------------------------------------------------
-
+ 
     const lunchs = require("./lunchs.json");
-    
-        // faire script qui trouve random dans les resto, dans le front il faut import 
-    
+    //quand je clique sur un bouton je vais chercher randomly un resto dans le fichier lunch.json
+    //
+        
     // RANDOM activity ---------------------------------------------------------------
     
     const responseActivity = await fetch("http://www.boredapi.com/api/activity/")
