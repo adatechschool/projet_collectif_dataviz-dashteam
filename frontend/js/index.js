@@ -46,7 +46,6 @@ const fetchData = async () => {
 
     // RANDOM LUNCHS ---------------------------------------------------------------
 
-
     const tabloLunch = (data.lunchs)
 
     function random_lunch(tabloLunch){
