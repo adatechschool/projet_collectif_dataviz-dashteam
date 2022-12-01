@@ -34,13 +34,14 @@
 
 #logo {
   width: 15rem;
+  margin-top: 5rem;
 }
 
 #main-content {
   background-color: var(--main-color);
   display: grid;
   grid-template-columns: repeat(10, 10%);
-  grid-template-rows: repeat(11, 20rem);
+  grid-template-rows: repeat(10, 20rem);
 }
 
 /* ------------------------------ INTRO ------------------------------ */
@@ -63,7 +64,7 @@
 } */
 
 #hello::after {
-  content: " Ada Lovelace";
+  content: " my friend 👋";
   color: var(--purple);
 }
 
@@ -305,7 +306,7 @@
   border-radius: 1rem;
   border: none;
   cursor: pointer;
-  transition: all 0.35s ease-out;
+  transition: all 0.35s ease-in-out;
 }
 
 .btn-article:hover,
@@ -320,6 +321,13 @@
   height: 0.3rem;
   background-color: var(--second-color);
   margin-top: 5rem;
+}
+
+#link-tech,
+#link-apps,
+#link-crypto,
+#link-security {
+  transition: all 0.35s ease-in-out;
 }
 
 /* ------------------------------ SPOTIFY BLOCK ------------------------------ */
@@ -367,7 +375,7 @@
 .btn-block {
   margin-top: 3rem;
   margin-left: 4rem;
-  background-color: var(--purple);
+  background-color: var(--main-color);
   padding: 1rem 1rem;
   border-radius: 1rem;
   border: none;
@@ -375,13 +383,19 @@
   width: 45%;
   display: flex;
   justify-content: space-between;
+  transition: all 0.25s ease-in-out;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--purple);
+}
+
+.btn-block:hover {
+  background-color: var(--purple);
+  color: var(--white);
 }
 
 .btn-block p {
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: var(--white);
   padding: 1rem;
 }
 
@@ -444,7 +458,7 @@
 .btn-lunch-block {
   margin-top: 3rem;
   margin-left: 4rem;
-  background-color: var(--purple);
+  background-color: var(--main-color);
   padding: 1rem 1rem;
   border-radius: 1rem;
   border: none;
@@ -452,13 +466,19 @@
   width: 35%;
   display: flex;
   justify-content: space-between;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--purple);
+  transition: all 0.35s ease-in-out;
+}
+
+.btn-lunch-block:hover {
+  background-color: var(--purple);
+  color: var(--white);
 }
 
 .btn-lunch-block p {
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: var(--white);
   padding: 1rem;
 }
 
