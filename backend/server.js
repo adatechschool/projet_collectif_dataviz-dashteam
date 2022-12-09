@@ -10,55 +10,6 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors());
 
-/* Client Credentials oAuth2 flow to authenticate against the Spotify Accounts. */
-
-// var client_id = "def7c58bf1dc4c55bafe1c7c9e0f5331";
-// var client_secret = "9b8ef3c114684d9ab02a70350b778dfe";
-
-// // Application requests authorization
-// const authOptions = {
-//   url: "https://accounts.spotify.com/api/token",
-//   headers: {
-//     Authorization:
-//       "Basic " +
-//       Buffer.from(client_id + ":" + client_secret).toString("base64"),
-//     "Content-Type": "application/x-www-form-urlencoded",
-//   },
-//   form: {
-//     grant_type: "client_credentials",
-//   },
-//   json: true,
-// };
-
-// let token = "";
-
-// request.post(authOptions, async function (error, response, body) {
-//   if (!error && response.statusCode === 200) {
-//     // Use the access token to access the Spotify Web API
-//     token = body.access_token;
-//     console.log(body);
-//   }
-// });
-
-// app.get("/spotify", async (req, res) => {
-//   try {
-//     console.log("token----->", token);
-//     const data = await axios.get(
-//       "https://api.spotify.com/v1/tracks/2TpxZ7JUBn3uw46aR7qd6V",
-//       {
-//         headers: {
-//           Authorization: "Bearer " + token,
-//         },
-//       }
-//     );
-
-//     res.json(data);
-//     console.log("response----->", data);
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// });
-
 app.get("/", async (req, res) => {
   try {
     // FUN FACT -------------------------------------------------------------------
